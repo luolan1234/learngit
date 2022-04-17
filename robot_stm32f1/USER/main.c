@@ -5,13 +5,12 @@
 #include "red.h"
 #include "motor.h"
 #include "stm32f1xx_hal.h"
+#include "dht.h"
 
 
 
 int main(void)
-{
-	
-	
+{	
     HAL_Init();                   	//初始化HAL库    
     Stm32_Clock_Init(RCC_PLL_MUL9); //设置时钟,72M
     delay_init(72);                	//初始化延时函数
@@ -20,14 +19,12 @@ int main(void)
 	RED_Init ();                  	//传感器初始化
 	motor_init();                	//电机初始化
 
-	while(1)
-		
-	{	
-		
-    OUT0=0;
-		OUT1=1;
-		OUT2=0;
-		OUT3=1;
+	while(1)	
+	{
+        OUT0=0;
+        OUT1=1;
+        OUT2=0;
+        OUT3=1;
 	}
 }
 
